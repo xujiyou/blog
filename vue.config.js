@@ -1,5 +1,7 @@
 module.exports = {
+    filenameHashing: false,
     indexPath: "../index.html",
-    publicPath: "./dist",
-    filenameHashing: false
+    publicPath: process.env.NODE_ENV === 'production'
+        ? './dist'
+        : '/'
 };
