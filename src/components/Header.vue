@@ -32,14 +32,7 @@
 </script>
 
 <style scoped>
-    #header {
-        height: 76px;
-        line-height: 76px;
-        background-color: transparent;
-        text-align: left;
-        padding: 0 32px 0 32px;
-        color: #fff;
-    }
+    #header {}
 
     #first {
         display: inline-block;
@@ -82,7 +75,7 @@
         background-color: transparent;
         box-shadow: none;
         border: none;
-        color: #fff;
+        /*color: #fff;*/
         outline: none;
         font-size: 16px;
         cursor: pointer;
@@ -97,14 +90,13 @@
         width: 100%;
         height: 2px;
         margin-top: 4px;
-        background: #fff;
         transition:all 0.3s ease-in-out;
         transform: scale3d(0,1,1);
         transform-origin:50% 0;
     }
 
     #nav button:hover::after {
-        transform:scale3d(1,1,1);
+        transform: scale3d(1,1,1);
     }
 
     #footer {
@@ -115,33 +107,20 @@
     #footer button {
         box-shadow: none;
         outline: none;
-        color: #fff;
         font-weight: bold;
         font-size: 16px;
         cursor: pointer;
         padding: 4px 12px 4px 12px;
         background-color: transparent;
-        border: 2px solid #fff;
+        border-width: 2px;
+        border-style: solid;
         border-radius: 4px;
     }
 
     #footer button:hover {
-        animation: bg-color 600ms 1;
-        animation-fill-mode : forwards
-    }
-
-    @keyframes bg-color {
-
-        0% {
-            background-color: transparent;
-            color: #fff;
-        }
-
-        100% {
-            background-color: #fff;
-            color: #2c3e50;
-        }
 
     }
+
+
 
 </style>
