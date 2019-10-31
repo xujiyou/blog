@@ -2,19 +2,21 @@
     <div id="home">
         <div id="page">
             <Header id="header"></Header>
+            <HeaderBack id="header-back"></HeaderBack>
         </div>
     </div>
 </template>
 
 <script lang="ts">
     import Header from "@/components/Header.vue";
+    import HeaderBack from "@/components/HeaderBack.vue";
     import { Component, Vue } from "vue-property-decorator";
 
     @Component({
-        components: {Header}
+        components: { Header, HeaderBack }
     })
     export default class Home extends Vue {
-        components = { Header }
+        components = { Header, HeaderBack }
 
     }
 </script>
@@ -51,9 +53,14 @@
     }
 
     #header {
-        position: relative;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
+        z-index: 100;
+    }
+
+    #header-back {
+        height: calc(100vh);
     }
 </style>
