@@ -1,10 +1,21 @@
 <template>
     <div id="header">
-        <div id="title">
-            许吉友
+        <div id="first">
+            <img src="../../public/xu.jpeg" id="logo-img">
+            <div id="title">
+                <div class="small">受命于天</div>
+                <div class="big">既寿永昌</div>
+            </div>
         </div>
         <div id="nav">
             <button>云原生</button>
+            <button>运维</button>
+            <button>大数据</button>
+            <button>大前端</button>
+            <button>更多</button>
+        </div>
+        <div id="footer">
+            <button>关于</button>
         </div>
     </div>
 </template>
@@ -14,7 +25,9 @@
 
     @Component({})
     export default class Header extends Vue {
+        mounted() {
 
+        }
     }
 </script>
 
@@ -22,17 +35,42 @@
     #header {
         height: 76px;
         line-height: 76px;
-        background-color: #2c3e50;
+        background-color: transparent;
         text-align: left;
-        padding-left: 16px;
-        padding-right: 16px;
+        padding: 0 32px 0 32px;
         color: #fff;
+    }
+
+    #first {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    #logo-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        vertical-align: middle;
     }
 
     #title {
         display: inline-block;
-        font-size: 20px;
-        margin-right: 48px;
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-right: 40px;
+        text-align: center;
+    }
+
+    .small {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .big {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
     }
 
     #nav {
@@ -46,12 +84,64 @@
         border: none;
         color: #fff;
         outline: none;
-        font-size: 20px;
+        font-size: 16px;
         cursor: pointer;
         padding: 0;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 
-    #nav button:hover {
-        border-bottom: 2px solid #42b983;
+    #nav button::after {
+        content:'';
+        display:block;
+        width: 100%;
+        height: 2px;
+        margin-top: 4px;
+        background: #fff;
+        transition:all 0.3s ease-in-out;
+        transform: scale3d(0,1,1);
+        transform-origin:50% 0;
     }
+
+    #nav button:hover::after {
+        transform:scale3d(1,1,1);
+    }
+
+    #footer {
+        display: inline-block;
+        float: right;
+    }
+
+    #footer button {
+        box-shadow: none;
+        outline: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 4px 12px 4px 12px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        border-radius: 4px;
+    }
+
+    #footer button:hover {
+        animation: bg-color 600ms 1;
+        animation-fill-mode : forwards
+    }
+
+    @keyframes bg-color {
+
+        0% {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        100% {
+            background-color: #fff;
+            color: #2c3e50;
+        }
+
+    }
+
 </style>
