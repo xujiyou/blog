@@ -1,15 +1,18 @@
 <template>
     <div id="header-back">
-        <div class="title">此剑之势 愈斩愈烈</div>
+        <div class="title"><b>Overview</b></div>
         <div class="content">
-            蠢货是无药可治的!<br/>
-            灭亡之路 短的超乎你的想象。<br/>
-            宁日安在 无人能云。<br/>
-            且随疾风前行 身后一许流星。<br/>
-            无罪之人 方可安睡。<br/>
+            本站采用 Vue.js + TypeScript + Github Pages 构建。<br/>
+            本站用于整理总结一些日常使用到的技术，包括但不限于：<br/>
+            大前端，Java，传统运维，云原生和大数据。<br/>
+            希望以此来激励自己学得更多更好。<br/>
         </div>
         <div class="content">
-            仁义道德 也是一种奢侈
+            受命于天 既寿永昌<br/><br/>
+            <button @click="gotoThisProject">本项目代码</button>
+            <button @click="gotoGithub">Github</button>
+            <button @click="gotoZhihu">知乎</button>
+            <button>本站全部文章</button>
         </div>
     </div>
 </template>
@@ -20,6 +23,17 @@
     @Component({})
     export default class HeaderBack extends Vue {
 
+        gotoThisProject () {
+            window.open("https://github.com/xujiyou/blog")
+        }
+
+        gotoGithub () {
+            window.open("https://github.com/xujiyou")
+        }
+
+        gotoZhihu () {
+            window.open("https://www.zhihu.com/people/yumugede/posts")
+        }
     }
 </script>
 
@@ -41,5 +55,35 @@
         font-size: 18px;
         line-height: 36px;
         margin-bottom: 60px;
+    }
+
+    button {
+        box-shadow: none;
+        outline: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 4px 12px 4px 12px;
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+        color: #fff;
+        height: 38px;
+        margin-right: 12px;
+    }
+
+    button:hover {
+        animation: button-bg-color 600ms 1;
+        animation-fill-mode : forwards
+    }
+
+    @keyframes button-bg-color {
+        0% {
+            background-color: transparent;
+        }
+        100% {
+            background-color: #fff;
+            color: #2c3e50;
+        }
     }
 </style>

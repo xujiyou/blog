@@ -21,7 +21,7 @@
                 </div>
             </div>
             <HeaderBack class="header-back"></HeaderBack>
-            <HeaderBack class="header-back"></HeaderBack>
+            <CloudNative class="header-back"></CloudNative>
             <HeaderBack class="header-back"></HeaderBack>
             <HeaderBack class="header-back"></HeaderBack>
             <HeaderBack class="header-back"></HeaderBack>
@@ -33,17 +33,16 @@
     import canvasAnimation from './canvas/animation';
     import Header from "@/components/Header.vue";
     import HeaderBack from "@/components/HeaderBack.vue";
+    import CloudNative from "@/components/CloudNative.vue";
     import { Component, Vue } from "vue-property-decorator";
 
     @Component({
-        components: { Header, HeaderBack }
+        components: { Header, HeaderBack, CloudNative }
     })
     export default class Home extends Vue {
         isScroll = false;
 
         active = 0;
-
-        components = { Header, HeaderBack };
 
         mounted () {
             let canvas = document.querySelector("#canvas") as HTMLCanvasElement;
