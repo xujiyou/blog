@@ -107,12 +107,11 @@
     #footer button {
         box-shadow: none;
         outline: none;
-        font-weight: bold;
         font-size: 16px;
         cursor: pointer;
         padding: 4px 12px 4px 12px;
         background-color: transparent;
-        border-width: 2px;
+        border-width: 1px;
         border-style: solid;
         border-radius: 4px;
     }

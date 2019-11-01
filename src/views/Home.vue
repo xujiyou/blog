@@ -1,5 +1,6 @@
 <template>
     <div id="home">
+        <canvas id="canvas"></canvas>
         <div id="page" @scroll="scroll">
             <Header class="top-header" :class="{'is-scroll': isScroll}"></Header>
             <div id="anchor-point">
@@ -29,6 +30,7 @@
 </template>
 
 <script lang="ts">
+    import canvasAnimation from './canvas/animation';
     import Header from "@/components/Header.vue";
     import HeaderBack from "@/components/HeaderBack.vue";
     import { Component, Vue } from "vue-property-decorator";
@@ -43,6 +45,11 @@
 
         components = { Header, HeaderBack };
 
+        mounted () {
+            let canvas = document.querySelector("#canvas") as HTMLCanvasElement;
+            canvasAnimation(canvas);
+        }
+
         scroll(e: Event) {
             const page = document.querySelector("#page");
             if (page === null) {
@@ -51,24 +58,21 @@
             let navContents = document.querySelectorAll('.header-back');
             let offsetTopArr: number[] = [];
             navContents.forEach((item) => {
-                let one = <HTMLElement> item;
+                let one = item as HTMLElement;
                 offsetTopArr.push(one.offsetTop)
             });
 
             const scrollTop = page.scrollTop;
             let navIndex = 0;
-            for (let n = 0; n < offsetTopArr.length; n++) {
+
+            for (let n = 0; n < offsetTopArr.length; n++ ) {
                 if (scrollTop >= offsetTopArr[n]) {
                     navIndex = n
                 }
             }
             this.active = navIndex;
 
-            if (scrollTop > 76) {
-                this.isScroll = true;
-            } else {
-                this.isScroll = false;
-            }
+            this.isScroll = scrollTop > 76;
         }
 
     }
@@ -80,6 +84,17 @@
         height: 100%;
         position: relative;
         overflow: hidden;
+    }
+
+    #canvas {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
     }
 
     #page::-webkit-scrollbar {
@@ -94,16 +109,13 @@
         scroll-behavior: smooth;
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-image: url("../assets/red.jpeg");
-        background-color: #2c3e50;
-        background-repeat: no-repeat;
         border: 0;
-        padding: 0 0 0 0;
+        padding: 0;
         margin: 0;
         text-align: center;
         touch-action: pan-y;
         -webkit-overflow-scrolling: touch;
+        z-index: 100;
     }
 
     .top-header {
