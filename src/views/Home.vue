@@ -22,9 +22,9 @@
             </div>
             <HeaderBack class="header-back"></HeaderBack>
             <CloudNative class="header-back"></CloudNative>
-            <HeaderBack class="header-back"></HeaderBack>
-            <HeaderBack class="header-back"></HeaderBack>
-            <HeaderBack class="header-back"></HeaderBack>
+            <BigFront class="header-back"></BigFront>
+            <BigData class="header-back"></BigData>
+            <DataBaseAndStore class="header-back"></DataBaseAndStore>
         </div>
     </div>
 </template>
@@ -32,12 +32,15 @@
 <script lang="ts">
     import canvasAnimation from './canvas/animation';
     import Header from "@/components/Header.vue";
-    import HeaderBack from "@/components/HeaderBack.vue";
-    import CloudNative from "@/components/CloudNative.vue";
+    import HeaderBack from "@/components/home/HeaderBack.vue";
+    import CloudNative from "@/components/home/CloudNative.vue";
+    import BigFront from "@/components/home/BigFront.vue";
+    import BigData from "@/components/home/BigData.vue";
+    import DataBaseAndStore from "@/components/home/DataBaseAndStore.vue";
     import { Component, Vue } from "vue-property-decorator";
 
     @Component({
-        components: { Header, HeaderBack, CloudNative }
+        components: { Header, HeaderBack, CloudNative, BigFront, BigData, DataBaseAndStore }
     })
     export default class Home extends Vue {
         isScroll = false;

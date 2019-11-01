@@ -3,8 +3,8 @@
         <div id="first">
             <img src="../../public/xu.jpeg" id="logo-img">
             <div id="title">
-                <div class="small">受命于天</div>
-                <div class="big">既寿永昌</div>
+                <div class="small">生命不息</div>
+                <div class="big">折腾不止</div>
             </div>
         </div>
         <div id="nav">

@@ -2,13 +2,13 @@
     <div id="header-back">
         <div class="title"><b>Overview</b></div>
         <div class="content">
-            本站采用 Vue.js + TypeScript + Github Pages 构建。<br/>
             本站用于整理总结一些日常使用到的技术，包括但不限于：<br/>
             大前端，Java，传统运维，云原生和大数据。<br/>
             希望以此来激励自己学得更多更好。<br/>
+            本站采用 Vue.js + TypeScript + Github Pages 构建。<br/>
         </div>
         <div class="content">
-            受命于天 既寿永昌<br/><br/>
+            生命不息，折腾不止<br/><br/>
             <button @click="gotoThisProject">本项目代码</button>
             <button @click="gotoGithub">Github</button>
             <button @click="gotoZhihu">知乎</button>

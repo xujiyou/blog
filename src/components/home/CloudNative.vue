@@ -10,42 +10,42 @@
             </div>
             <div class="skill-list">
                 <div class="card">
-                    <img src="../assets/docker.png" alt="k8s"><br/>
+                    <img src="../../assets/docker.png" alt="k8s"><br/>
                     <div class="skill-title">Docker</div>
                     Docker 让应用程序布署在软件容器下的工作可以自动化进行。
                 </div>
                 <div class="card">
-                    <img src="../assets/k8s.png" alt="k8s"><br/>
+                    <img src="../../assets/k8s.png" alt="k8s"><br/>
                     <div class="skill-title">Kubernetes</div>
                     用于自动部署、扩展和管理容器化应用程序的开源系统。
                 </div>
                 <div class="card">
-                    <img src="../assets/istio.png" alt="k8s"><br/>
+                    <img src="../../assets/istio.png" alt="k8s"><br/>
                     <div class="skill-title">Istio</div>
                     Istio 用于统一集成微服务、管理跨微服务的流量、实施策略和聚合遥测数据。
                 </div>
                 <div class="card">
-                    <img src="../assets/grpc.png" alt="k8s"><br/>
+                    <img src="../../assets/grpc.png" alt="k8s"><br/>
                     <div class="skill-title">gRPC</div>
                     高性能、开源、通用的RPC框架。<br/><br/>
                 </div>
                 <div class="card">
-                    <img src="../assets/prometheus.png" alt="k8s"><br/>
+                    <img src="../../assets/prometheus.png" alt="k8s"><br/>
                     <div class="skill-title">Prometheus</div>
                     一套开源的系统、服务监控工具，在给定时间间隔内收集指标、校验条件触发警报。
                 </div>
                 <div class="card">
-                    <img src="../assets/grafana.png" alt="k8s"><br/>
+                    <img src="../../assets/grafana.png" alt="k8s"><br/>
                     <div class="skill-title">Grafana</div>
                     用于 Graphite、InfluxDB 和 Prometheus 等数据源的监控、度量分析和仪表板的工具。
                 </div>
                 <div class="card">
-                    <img src="../assets/jaeger.png" alt="k8s"><br/>
+                    <img src="../../assets/jaeger.png" alt="k8s"><br/>
                     <div class="skill-title">Jaeger</div>
                     开源的故障追踪系统，开放分布式追踪规范 OpenTracing 的一种实现。
                 </div>
                 <div class="card">
-                    <img src="../assets/helm.png" alt="k8s"><br/>
+                    <img src="../../assets/helm.png" alt="k8s"><br/>
                     <div class="skill-title">Helm</div>
                     一个 Kubernetes 的包管理工具，用来简化 Kubernetes 应用的部署和管理
                 </div>
@@ -73,7 +73,7 @@
     }
 
     .title {
-        padding-top: calc(10vh);
+        padding-top: calc(20vh);
         margin-bottom: 60px;
         font-size: 32px;
     }
