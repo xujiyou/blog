@@ -12,7 +12,7 @@
             <button @click="gotoThisProject">本项目代码</button>
             <button @click="gotoGithub">Github</button>
             <button @click="gotoZhihu">知乎</button>
-            <button>本站全部文章</button>
+            <button @click="$router.push('/all')">本站全部文章</button>
         </div>
     </div>
 </template>

@@ -2,17 +2,17 @@
     <div id="header">
         <div id="first">
             <img src="../../public/xu.jpeg" id="logo-img">
-            <div id="title">
+            <div id="title" v-on:click="$router.push('/')">
                 <div class="small">生命不息</div>
                 <div class="big">折腾不止</div>
             </div>
         </div>
         <div id="nav">
-            <button>云原生</button>
-            <button>运维</button>
-            <button>大数据</button>
-            <button>大前端</button>
-            <button>更多</button>
+            <button v-on:click="$router.push('/')">首页</button>
+            <button>分类</button>
+            <button v-on:click="$router.push('/all')">文章</button>
+            <button>项目</button>
+            <button>时间轴</button>
         </div>
         <div id="footer">
             <button>关于</button>
