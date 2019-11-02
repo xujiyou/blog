@@ -19,12 +19,16 @@
                 <div :class="{'container': true, 'container-active': active === 4}" @click="scrollTo(4)">
                      <div :class="{'circle': true, 'circle-active': active === 4}"></div>
                 </div>
+                <div :class="{'container': true, 'container-active': active === 5}" @click="scrollTo(5)">
+                    <div :class="{'circle': true, 'circle-active': active === 5}"></div>
+                </div>
             </div>
             <HeaderBack class="header-back"></HeaderBack>
             <CloudNative class="header-back"></CloudNative>
-            <BigFront class="header-back"></BigFront>
             <BigData class="header-back"></BigData>
             <DataBaseAndStore class="header-back"></DataBaseAndStore>
+            <BigFront class="header-back"></BigFront>
+            <Footer class="header-back"></Footer>
         </div>
     </div>
 </template>
@@ -37,10 +41,11 @@
     import BigFront from "@/components/home/BigFront.vue";
     import BigData from "@/components/home/BigData.vue";
     import DataBaseAndStore from "@/components/home/DataBaseAndStore.vue";
+    import Footer from "@/components/Footer.vue";
     import { Component, Vue } from "vue-property-decorator";
 
     @Component({
-        components: { Header, HeaderBack, CloudNative, BigFront, BigData, DataBaseAndStore }
+        components: { Header, HeaderBack, CloudNative, BigFront, BigData, DataBaseAndStore, Footer }
     })
     export default class Home extends Vue {
         isScroll = false;
@@ -64,7 +69,7 @@
                 offsetTopArr.push(one.offsetTop)
             });
 
-            const scrollTop = page.scrollTop;
+            const scrollTop = page.scrollTop + offsetTopArr[1] / 3 * 2;
             let navIndex = 0;
 
             for (let n = 0; n < offsetTopArr.length; n++ ) {
@@ -74,7 +79,7 @@
             }
             this.active = navIndex;
 
-            this.isScroll = scrollTop > 76;
+            this.isScroll = scrollTop > offsetTopArr[1] / 3 * 2 + 100;
         }
 
         scrollTo (index) {
@@ -251,7 +256,7 @@
         top: 50%;
         right: 60px;
         z-index: 100;
-        margin-top: -99px;
+        margin-top: -120px;
         width: 12px;
     }
 
