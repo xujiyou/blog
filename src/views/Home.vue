@@ -1,6 +1,5 @@
 <template>
-    <div id="home">
-        <canvas id="canvas"></canvas>
+    <div>
         <div id="page" @scroll="scroll">
             <Header class="top-header" :class="{'is-scroll': isScroll}"></Header>
             <div id="anchor-point">
@@ -34,7 +33,6 @@
 </template>
 
 <script lang="ts">
-    import canvasAnimation from './canvas/animation';
     import Header from "@/components/Header.vue";
     import HeaderBack from "@/components/home/HeaderBack.vue";
     import CloudNative from "@/components/home/CloudNative.vue";
@@ -49,15 +47,9 @@
     })
     export default class Home extends Vue {
         isScroll = false;
-
         active = 0;
 
-        mounted () {
-            let canvas = document.querySelector("#canvas") as HTMLCanvasElement;
-            canvasAnimation(canvas);
-        }
-
-        scroll(e: Event) {
+        scroll() {
             const page = document.querySelector("#page");
             if (page === null) {
                 return;
@@ -136,40 +128,11 @@
 </script>
 
 <style scoped lang="less">
-    #home {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    #canvas {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-    }
-
-    #page::-webkit-scrollbar {
-        display: none;
-    }
 
     #page {
-        position: absolute;
-        left: 0;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
         width: 100%;
         height: 100%;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        text-align: center;
+        overflow-y: scroll;
         touch-action: pan-y;
         -webkit-overflow-scrolling: touch;
         z-index: 100;
@@ -181,10 +144,8 @@
         left: 0;
         right: 0;
         z-index: 100;
-
         height: 76px;
         line-height: 76px;
-        text-align: left;
         padding: 0 32px 0 32px;
 
         background-color: transparent;
