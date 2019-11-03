@@ -4,8 +4,18 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+    state: {
+      scrollTop: 0
+    },
+    actions: {
+        saveScrollTop ({ commit }, top) {
+            commit('setScrollTop',top);
+        }
+    },
+    mutations: {
+      setScrollTop (state, top) {
+          state.scrollTop = top;
+      }
+    },
+    modules: {}
 });
