@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bfd7374fdb787ec334cf",
+    "revision": "2162f4fc804f89ec6588",
     "url": "dist/css/app.css"
   },
   {
@@ -36,11 +36,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "dist/img/prometheus.png"
   },
   {
-    "revision": "50aedbf84c214d53314a01987001fa39",
+    "revision": "80fb7d670811d9ccf2c2544e28862fb4",
     "url": "dist/index.html"
   },
   {
-    "revision": "bfd7374fdb787ec334cf",
+    "revision": "2162f4fc804f89ec6588",
     "url": "dist/js/app.js"
   },
   {

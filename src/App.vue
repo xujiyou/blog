@@ -10,7 +10,7 @@
     import canvasAnimation from './views/canvas/animation';
     import Header from "@/components/Header.vue";
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({
         components: { Header }
@@ -20,7 +20,11 @@
         @State("scrollTop")
         scrollTop!: number;
 
+        @Action("judgePC")
+        judgePC!: Function;
+
         mounted () {
+            this.judgePC();
             let canvas = document.querySelector("#canvas") as HTMLCanvasElement;
             canvasAnimation(canvas);
         }
@@ -78,7 +82,7 @@
         height: 76px;
         line-height: 76px;
         text-align: left;
-        padding: 0 32px 0 32px;
+        padding: 0;
 
         background-color: transparent;
         color: #fff;
@@ -107,6 +111,11 @@
         }
         /deep/ #nav button::after {
             background: #2c3e50;
+        }
+
+        /deep/ .mobile-nav {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         }
 
         /deep/ #footer button:hover {
