@@ -90,11 +90,11 @@
             color: #fff;
             border-color: #fff;
         }
-        /deep/ #nav button::after {
+        /deep/ .nav button::after {
             background: #fff;
         }
 
-        /deep/ #footer button:hover {
+        /deep/ .footer button:hover {
             animation: button-bg-color 600ms 1;
             animation-fill-mode : forwards
         }
@@ -109,7 +109,7 @@
             color: #2c3e50;
             border-color: #2c3e50;
         }
-        /deep/ #nav button::after {
+        /deep/ .nav button::after {
             background: #2c3e50;
         }
 
@@ -118,7 +118,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         }
 
-        /deep/ #footer button:hover {
+        /deep/ .footer button:hover {
             animation: new-button-bg-color 600ms 1;
             animation-fill-mode : forwards
         }
