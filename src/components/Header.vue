@@ -141,7 +141,7 @@
     /*手机端样式*/
 
     .mobile-header {
-        background-color: rgba(255, 255, 255, 0.08);
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     .mobile-first {

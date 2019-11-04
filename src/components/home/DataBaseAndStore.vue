@@ -1,24 +1,51 @@
 <template>
-    <div id="store">
-        <div class="title"><b>数据库及存储技术</b></div>
-        <div class="content">
-            <div class="desc">
-                数据存储是比较重要的一块。<br/>
-                存储格式包括关系型和非关系型，非关系型又分为文档、键值对、图、列等格式。<br/>
-                另外还有一些分布式储存技术和对象储存技术。<br/>
-                <br/><br/>
-                <button>数据库及存储技术系列文章</button>
+    <div>
+        <div id="store" v-if="pc">
+            <div class="title"><b>数据库及存储技术</b></div>
+            <div class="content">
+                <div class="desc">
+                    数据存储是比较重要的一块。<br/>
+                    存储格式包括关系型和非关系型，非关系型又分为文档、键值对、图、列等格式。<br/>
+                    另外还有一些分布式储存技术和对象储存技术。<br/>
+                    <br/><br/>
+                    <button>数据库及存储技术系列文章</button>
+                </div>
+                <div class="skill-list">
+                    <div><b>MySQL</b> : 比较传统的关系型数据库。</div>
+                    <div><b>PostgreSQL</b> : 结合了关系型和非关系型特点的数据库。</div>
+                    <div><b>Redis</b> : 基于内存的键值对储存，主要用于缓存。</div>
+                    <div><b>MongoDB</b> : 文档型数据库，存 JSON 的</div>
+                    <div><b>Neo4j</b> : 图数据库，存节点与关系</div>
+                    <div><b>HBase</b> : 列数据库</div>
+                    <div><b>Elasticsearch</b> : 文档型数据库，有强大的全文索引，适合实时搜索数据。</div>
+                    <div><b>HDFS</b> : 分布式文件系统，大数据的基石，适合离线批量处理大数据</div>
+                    <div><b>Ceph</b> : 分布式文件系统，对象储存，实时存储系统。</div>
+                </div>
             </div>
-            <div class="skill-list">
-                <div><b>MySQL</b> : 比较传统的关系型数据库。</div>
-                <div><b>PostgreSQL</b> : 结合了关系型和非关系型特点的数据库。</div>
-                <div><b>Redis</b> : 基于内存的键值对储存，主要用于缓存。</div>
-                <div><b>MongoDB</b> : 文档型数据库，存 JSON 的</div>
-                <div><b>Neo4j</b> : 图数据库，存节点与关系</div>
-                <div><b>HBase</b> : 列数据库</div>
-                <div><b>Elasticsearch</b> : 文档型数据库，有强大的全文索引，适合实时搜索数据。</div>
-                <div><b>HDFS</b> : 分布式文件系统，大数据的基石，适合离线批量处理大数据</div>
-                <div><b>Ceph</b> : 分布式文件系统，对象储存，实时存储系统。</div>
+        </div>
+        <div id="mobile-store" v-else>
+            <div class="title"><b>数据库及存储技术</b></div>
+            <div class="mobile-content">
+                <div class="mobile-desc">
+                    数据存储是比较重要的一块。<br/>
+                    存储格式包括关系型和非关系型，非关系型又分为文档、键值对、图、列等格式。<br/>
+                    另外还有一些分布式储存技术和对象储存技术。<br/>
+                    <br/><br/>
+                </div>
+                <div class="mobile-skill-list">
+                    <div><b>MySQL</b> : 比较传统的关系型数据库。</div>
+                    <div><b>PostgreSQL</b> : 结合了关系型和非关系型特点的数据库。</div>
+                    <div><b>Redis</b> : 基于内存的键值对储存，主要用于缓存。</div>
+                    <div><b>MongoDB</b> : 文档型数据库，存 JSON 的</div>
+                    <div><b>Neo4j</b> : 图数据库，存节点与关系</div>
+                    <div><b>HBase</b> : 列数据库</div>
+                    <div><b>Elasticsearch</b> : 文档型数据库，有强大的全文索引，适合实时搜索数据。</div>
+                    <div><b>HDFS</b> : 分布式文件系统，大数据的基石，适合离线批量处理大数据</div>
+                    <div><b>Ceph</b> : 分布式文件系统，对象储存，实时存储系统。</div>
+                </div>
+                <div class="mobile-button">
+                    <button>数据库及存储技术系列文章</button>
+                </div>
             </div>
         </div>
     </div>
@@ -26,15 +53,18 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
+    import { State } from 'vuex-class';
 
     @Component({})
     export default class DataBaseAndStore extends Vue {
-
+        @State("pc")
+        pc!: number;
     }
 </script>
 
 <style scoped>
     #store {
+        height: calc(100vh);
         width: 100%;
         padding-left: 96px;
         padding-right: 100px;
@@ -125,5 +155,33 @@
             background-color: #fff;
             color: #2c3e50;
         }
+    }
+
+    /* 手机端样式 */
+    #mobile-store {
+        width: 100%;
+        padding-left: 16px;
+        color: #fff;
+        text-align: left;
+    }
+
+    .mobile-content {
+        font-size: 18px;
+        line-height: 36px;
+        margin-bottom: 30px;
+        width: 100%;
+        margin-right: 48px;
+    }
+
+    .mobile-desc {
+        margin-right: 48px;
+    }
+
+    .mobile-skill-list {
+        margin-right: 48px;
+    }
+
+    .mobile-button {
+        margin-top: 20px;
     }
 </style>

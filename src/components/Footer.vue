@@ -10,7 +10,7 @@
             <button>本站全部文章</button>
         </div>
 
-        <div class="bottom">
+        <div class="bottom" v-if="pc">
             <div class="link">
                 <h3>联系方式</h3>
                 <div>QQ & WX : 552003271</div>
@@ -20,12 +20,23 @@
                     © 2019 许吉友
                 </div>
             </div>
-            <div id="nav">
-                <button>云原生</button>
-                <button>运维</button>
-                <button>大数据</button>
-                <button>大前端</button>
-                <button>更多</button>
+            <div class="nav">
+                <button v-on:click="$router.push('/')">首页</button>
+                <button>分类</button>
+                <button v-on:click="$router.push('/all')">文章</button>
+                <button>项目</button>
+                <button>时间轴</button>
+            </div>
+        </div>
+        <div class="mobile-bottom" v-else>
+            <div class="mobile-link">
+                <h3>联系方式</h3>
+                <div>QQ & WX : 552003271</div>
+                <div>Github : 552003271</div>
+                <div>知乎 : 552003271</div>
+                <div class="copyright">
+                    © 2019 许吉友
+                </div>
             </div>
         </div>
     </div>
@@ -33,10 +44,12 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
+    import { State } from 'vuex-class';
 
     @Component({})
     export default class Footer extends Vue {
-
+        @State("pc")
+        pc!: number;
     }
 </script>
 
@@ -123,14 +136,14 @@
         height: 100%;
     }
 
-    #nav {
+    .nav {
         padding-top: 20px;
         display: inline-block;
         width: 56%;
         vertical-align: top;
     }
 
-    #nav button {
+    .nav button {
         height: 32px;
         background-color: transparent;
         box-shadow: none;
@@ -144,7 +157,7 @@
         margin-right: 16px;
     }
 
-    #nav button::after {
+    .nav button::after {
         content:'';
         background-color: #000;
         display:block;
@@ -156,12 +169,30 @@
         transform-origin:50% 0;
     }
 
-    #nav button:hover::after {
+    .nav button:hover::after {
         transform: scale3d(1,1,1);
     }
 
     .copyright {
         padding-top: 20px;
         font-size: 14px;
+    }
+
+    /* 手机端样式 */
+    .mobile-bottom {
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 200px;
+        width: 100%;
+        text-align: left;
+        color: #000;
+    }
+
+    .mobile-link {
+        padding-left: 16px;
+        height: 100%;
+    }
+
+    .mobile-link h3 {
+        padding-top: 10px;
     }
 </style>

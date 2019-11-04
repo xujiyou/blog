@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="page" @scroll="scroll">
-            <div id="anchor-point">
+            <div id="anchor-point" :style="pc ? 'right: 60px' : 'right: 24px'">
                 <div :class="{'container': true, 'container-active': active === 0}" @click="scrollTo(0)">
                     <div :class="{'circle': true, 'circle-active': active === 0}"></div>
                 </div>
@@ -39,13 +39,16 @@
     import DataBaseAndStore from "@/components/home/DataBaseAndStore.vue";
     import Footer from "@/components/Footer.vue";
     import { Component, Vue } from "vue-property-decorator";
-    import { Action } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({
         components: { HeaderBack, CloudNative, BigFront, BigData, DataBaseAndStore, Footer }
     })
     export default class Home extends Vue {
         active = 0;
+
+        @State("pc")
+        pc!: number;
 
         @Action("saveScrollTop")
         saveScrollTop!: Function;
@@ -140,7 +143,6 @@
     #anchor-point {
         position: fixed;
         top: 50%;
-        right: 60px;
         z-index: 100;
         margin-top: -120px;
         width: 12px;
@@ -218,6 +220,6 @@
     }
 
     .header-back {
-        height: calc(100vh);
+        /*height: calc(100vh);*/
     }
 </style>
