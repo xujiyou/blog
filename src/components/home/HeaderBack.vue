@@ -13,7 +13,7 @@
                 <button @click="gotoThisProject">本项目代码</button>
                 <button @click="gotoGithub">Github</button>
                 <button @click="gotoZhihu">知乎</button>
-                <button @click="$router.push('/all')">本站全部文章</button>
+                <button @click="push('/all')">本站全部文章</button>
             </div>
         </div>
         <div id="mobile-header-back" v-else>
@@ -37,12 +37,16 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class HeaderBack extends Vue {
+
         @State("pc")
         pc!: number;
+
+        @Action("savePath")
+        savePath!:Function;
 
         gotoThisProject () {
             window.open("https://github.com/xujiyou/blog")
@@ -54,6 +58,11 @@
 
         gotoZhihu () {
             window.open("https://www.zhihu.com/people/yumugede/posts")
+        }
+
+        push (value) {
+            this.savePath(value);
+            this.$router.push(value);
         }
     }
 </script>

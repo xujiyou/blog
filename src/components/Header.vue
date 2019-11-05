@@ -9,9 +9,9 @@
                 </div>
             </div>
             <div class="nav">
-                <button v-on:click="$router.push('/')">首页</button>
-                <button>分类</button>
-                <button v-on:click="$router.push('/all')">文章</button>
+                <button v-on:click="push('/')" :style="path === '/' ? 'color: #17b5d2' : ''">首页</button>
+                <button v-on:click="push('/category')" :style="path === '/category' ? 'color: #17b5d2' : ''">分类</button>
+                <button v-on:click="push('/all')" :style="path === '/all' ? 'color: #17b5d2' : ''">文章</button>
                 <button>项目</button>
                 <button>时间轴</button>
             </div>
@@ -43,14 +43,32 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class Header extends Vue {
-        expand = false;
 
         @State("pc")
         pc!: number;
+
+        @State("path")
+        path!: string;
+
+        expand = false;
+
+        @Action("savePath")
+        savePath!:Function;
+
+        mounted() {
+            this.savePath(this.$route.path);
+        }
+
+        push(value) {
+            if (this.path !== value) {
+                this.savePath(value);
+                this.$router.push(value);
+            }
+        }
     }
 </script>
 

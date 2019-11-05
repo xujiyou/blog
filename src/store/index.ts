@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         pc: true,
+        path: "",
         scrollTop: 0
     },
     actions: {
@@ -24,7 +25,11 @@ export default new Vuex.Store({
 
         saveScrollTop ({ commit }, top) {
             commit('setScrollTop',top);
-        }
+        },
+
+        savePath  ({ commit }, path) {
+            commit('setPath', path);
+        },
     },
     mutations: {
         setPc(state, result) {
@@ -35,6 +40,9 @@ export default new Vuex.Store({
           state.scrollTop = top;
         },
 
+        setPath (state, path) {
+            state.path = path;
+        },
     },
     modules: {}
 });
