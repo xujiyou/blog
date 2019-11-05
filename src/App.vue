@@ -87,11 +87,11 @@
         background-color: transparent;
         color: #fff;
         ::v-deep button {
-            color: #fff;
-            border-color: #fff;
+            color: #ffffff;
+            border-color: #ffffff;
         }
         ::v-deep .nav button::after {
-            background: #fff;
+            background-color: #ffffff;
         }
 
         ::v-deep .footer button:hover {
