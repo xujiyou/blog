@@ -86,15 +86,15 @@
 
         background-color: transparent;
         color: #fff;
-        /deep/ button {
+        ::v-deep button {
             color: #fff;
             border-color: #fff;
         }
-        /deep/ .nav button::after {
+        ::v-deep .nav button::after {
             background: #fff;
         }
 
-        /deep/ .footer button:hover {
+        ::v-deep .footer button:hover {
             animation: button-bg-color 600ms 1;
             animation-fill-mode : forwards
         }
@@ -105,20 +105,20 @@
         animation-fill-mode : forwards;
 
         color: #2c3e50;
-        /deep/ button {
+        ::v-deep button {
             color: #2c3e50;
             border-color: #2c3e50;
         }
-        /deep/ .nav button::after {
+        ::v-deep .nav button::after {
             background: #2c3e50;
         }
 
-        /deep/ .mobile-nav {
+        ::v-deep .mobile-nav {
             background: rgba(255, 255, 255, 0.8);
             border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         }
 
-        /deep/ .footer button:hover {
+        ::v-deep .footer button:hover {
             animation: new-button-bg-color 600ms 1;
             animation-fill-mode : forwards
         }
