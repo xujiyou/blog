@@ -1,7 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f0845acdd550acee415a",
+    "revision": "e3eb6516b5946480f4f4",
     "url": "dist/css/app.css"
+  },
+  {
+    "revision": "02b86d118c0bdb4f528e",
+    "url": "dist/css/chunk-vendors.css"
   },
   {
     "revision": "307c79ba34279f9bfcf39112e3f851f4",
@@ -32,15 +36,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "dist/img/prometheus.png"
   },
   {
-    "revision": "aa7e76e548e3596d83a6c322cddaa109",
+    "revision": "a9df2630f32b3a4f473e8512b87c431c",
     "url": "dist/index.html"
   },
   {
-    "revision": "f0845acdd550acee415a",
+    "revision": "e3eb6516b5946480f4f4",
     "url": "dist/js/app.js"
   },
   {
-    "revision": "276b6929272fa8783bc1",
+    "revision": "02b86d118c0bdb4f528e",
     "url": "dist/js/chunk-vendors.js"
   },
   {

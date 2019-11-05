@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <canvas id="canvas"></canvas>
-        <router-view id="router-view"></router-view>
+        <router-view id="router-view" v-transition></router-view>
         <Header class="top-header" :class="{'is-scroll': scrollTop >= 100}"></Header>
     </div>
 </template>
