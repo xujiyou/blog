@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import All from "../views/All.vue";
 import Category from "../views/Category.vue";
+import Project from "../views/Project.vue";
+import Time from "../views/Time.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +21,14 @@ const routes = [
         path: "/all",
         name: "all",
         component: All
+    }, {
+        path: "/project",
+        name: "project",
+        component: Project
+    }, {
+        path: "/time",
+        name: "time",
+        component: Time
     }
 ];
 
