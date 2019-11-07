@@ -7,7 +7,9 @@ import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 Vue.use(vueg, router, {
-    duration: 0.6,
+    duration: 1,
+    enter: 'fadeIn',
+    leave: "fadeIn",
     map: {
         home: {
             enter: ["category", "all", "project", "time"]
