@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import All from "../views/All.vue";
+import Article from "../views/Article.vue";
 import Category from "../views/Category.vue";
 import Project from "../views/Project.vue";
 import Time from "../views/Time.vue";
@@ -18,9 +18,9 @@ const routes = [
         name: "category",
         component: Category
     }, {
-        path: "/all",
-        name: "all",
-        component: All
+        path: "/article",
+        name: "article",
+        component: Article
     }, {
         path: "/project",
         name: "project",
@@ -33,7 +33,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-    //mode: "history",
+    mode: "history",
     base: process.env.BASE_URL,
     routes
 });

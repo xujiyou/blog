@@ -10,26 +10,6 @@ Vue.use(vueg, router, {
     duration: 1,
     enter: 'fadeIn',
     leave: "fadeIn",
-    map: {
-        home: {
-            enter: ["category", "all", "project", "time"]
-        },
-        category: {
-            enter: ["all", "project", "time"],
-            leave: ["home"]
-        },
-        all: {
-            enter: ["project", "time"],
-            leave: ["home", "category"]
-        },
-        project: {
-            enter: ["time"],
-            leave: ["home", "category", "all"]
-        },
-        time: {
-            leave: ["home", "category", "all", "time"]
-        }
-    }
 });
 
 new Vue({

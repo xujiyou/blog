@@ -11,7 +11,7 @@
             <div class="nav">
                 <button v-on:click="push('/')" :style="path === '/' ? 'color: #17b5d2' : ''">首页</button>
                 <button v-on:click="push('/category')" :style="path === '/category' ? 'color: #17b5d2' : ''">分类</button>
-                <button v-on:click="push('/all')" :style="path === '/all' ? 'color: #17b5d2' : ''">文章</button>
+                <button v-on:click="push('/article')" :style="path === '/article' ? 'color: #17b5d2' : ''">文章</button>
                 <button v-on:click="push('/project')" :style="path === '/project' ? 'color: #17b5d2' : ''">项目</button>
                 <button v-on:click="push('/time')" :style="path === '/time' ? 'color: #17b5d2' : ''">时间轴</button>
             </div>

@@ -83,7 +83,7 @@
     }
 
     button:hover {
-        animation: button-color 300ms 1;
+        animation: button-color 600ms 1;
         animation-fill-mode : forwards
     }
 
@@ -91,10 +91,10 @@
         0% {
             background-color: transparent;
             color: #fff;
-        }
+        } 
         100% {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #17b5d2;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #2c3e50;
         }
     }
 

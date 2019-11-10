@@ -18,7 +18,7 @@
     @Component({
         components: { LeftList, ArticleList }
     })
-    export default class All extends Vue {
+    export default class Article extends Vue {
 
         @Action("saveScrollTop")
         saveScrollTop!: Function;
