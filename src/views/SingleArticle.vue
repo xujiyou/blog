@@ -4,7 +4,7 @@
             <div class="content">
                 <div class="article">
                     <button v-on:click="pop">返回</button>
-<!--                    <div class="markdown" v-html="md.render(article)"></div>-->
+                    <div class="markdown" v-html="md.render(article)"></div>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
     import { Action } from 'vuex-class';
-    // import MarkdownIt from 'markdown-it';
+    import MarkdownIt from 'markdown-it';
     const namespace: string = 'article_store';
 
     @Component({
@@ -24,7 +24,7 @@
 
         article: string = "";
 
-        // md = new MarkdownIt();
+        md = new MarkdownIt();
 
         @Action("saveScrollTop")
         saveScrollTop!: Function;
@@ -112,24 +112,24 @@
         }
     }
 
-    /*::v-deep .markdown pre {*/
-    /*    border-radius: 4px;*/
-    /*    padding: 12px;*/
-    /*    background-color: rgba(44, 62, 80, 0.4);*/
-    /*}*/
+    ::v-deep .markdown pre {
+        border-radius: 4px;
+        padding: 12px;
+        background-color: rgba(44, 62, 80, 0.4);
+    }
 
-    /*::v-deep .markdown code {*/
-    /*    color: #17b5d2;*/
-    /*    font-weight: bold;*/
-    /*}*/
+    ::v-deep .markdown code {
+        color: #17b5d2;
+        font-weight: bold;
+    }
 
-    /*::v-deep .markdown pre code {*/
-    /*    color: #ddd;*/
-    /*    font-weight: normal;*/
-    /*}*/
+    ::v-deep .markdown pre code {
+        color: #ddd;
+        font-weight: normal;
+    }
 
-    /*::v-deep .markdown li {*/
-    /*    font-size: 14px;*/
-    /*    color: #ddd;*/
-    /*}*/
+    ::v-deep .markdown li {
+        font-size: 14px;
+        color: #ddd;
+    }
 </style>
