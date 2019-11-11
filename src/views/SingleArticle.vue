@@ -23,22 +23,6 @@
 
         article: string = "";
 
-        options = {
-            markdownIt: {
-                linkify: true,
-                highlight: function (code) {
-                    window.console.log(code);
-                    return code;
-                }
-            },
-            linkAttributes: {
-                attrs: {
-                    target: '_blank',
-                    rel: 'noopener'
-                }
-            }
-        };
-
         @Action("saveScrollTop")
         saveScrollTop!: Function;
 
