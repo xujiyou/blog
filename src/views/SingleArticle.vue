@@ -4,7 +4,7 @@
             <div class="content">
                 <div class="article">
                     <button v-on:click="pop">返回</button>
-                    <vue-markdown :source="article"></vue-markdown>
+                    <markdown-it-vue class="markdown" :content="article" :options="options"></markdown-it-vue>
                 </div>
             </div>
         </div>
@@ -14,15 +14,30 @@
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
     import { Action } from 'vuex-class';
-    import VueMarkdown from 'vue-markdown'
     const namespace: string = 'article_store';
 
     @Component({
-        components: { VueMarkdown }
+        components: { }
     })
     export default class SingleArticle extends Vue {
 
         article: string = "";
+
+        options = {
+            markdownIt: {
+                linkify: true,
+                highlight: function (code) {
+                    window.console.log(code);
+                    return code;
+                }
+            },
+            linkAttributes: {
+                attrs: {
+                    target: '_blank',
+                    rel: 'noopener'
+                }
+            }
+        };
 
         @Action("saveScrollTop")
         saveScrollTop!: Function;
@@ -53,7 +68,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
     #page {
         width: 100%;
         height: 100%;
@@ -92,7 +107,7 @@
         color: #fff;
         height: 32px;
         margin-right: 12px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     button:hover {
@@ -108,5 +123,13 @@
             background-color: #fff;
             color: #2c3e50;
         }
+    }
+
+    .markdown {
+        color: #fff;
+    }
+
+    ::v-deep .markdown pre {
+        background-color: rgba(44, 62, 80, 0.4);
     }
 </style>
