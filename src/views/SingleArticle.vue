@@ -112,24 +112,24 @@
         }
     }
 
-    ::v-deep .markdown pre {
-        border-radius: 4px;
-        padding: 12px;
-        background-color: rgba(44, 62, 80, 0.4);
-    }
+    /*::v-deep .markdown pre {*/
+    /*    border-radius: 4px;*/
+    /*    padding: 12px;*/
+    /*    background-color: rgba(44, 62, 80, 0.4);*/
+    /*}*/
 
-    ::v-deep .markdown code {
-        color: #17b5d2;
-        font-weight: bold;
-    }
+    /*::v-deep .markdown code {*/
+    /*    color: #17b5d2;*/
+    /*    font-weight: bold;*/
+    /*}*/
 
-    ::v-deep .markdown pre code {
-        color: #ddd;
-        font-weight: normal;
-    }
+    /*::v-deep .markdown pre code {*/
+    /*    color: #ddd;*/
+    /*    font-weight: normal;*/
+    /*}*/
 
-    ::v-deep .markdown li {
-        font-size: 14px;
-        color: #ddd;
-    }
+    /*::v-deep .markdown li {*/
+    /*    font-size: 14px;*/
+    /*    color: #ddd;*/
+    /*}*/
 </style>
