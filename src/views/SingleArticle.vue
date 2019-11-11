@@ -4,7 +4,7 @@
             <div class="content">
                 <div class="article">
                     <button v-on:click="pop">返回</button>
-                    <div class="markdown" v-html="md.render(article)"></div>
+<!--                    <div class="markdown" v-html="md.render(article)"></div>-->
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
     import { Action } from 'vuex-class';
-    import MarkdownIt from 'markdown-it';
+    // import MarkdownIt from 'markdown-it';
     const namespace: string = 'article_store';
 
     @Component({
@@ -24,7 +24,7 @@
 
         article: string = "";
 
-        md = new MarkdownIt();
+        // md = new MarkdownIt();
 
         @Action("saveScrollTop")
         saveScrollTop!: Function;
