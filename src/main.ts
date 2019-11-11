@@ -3,12 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import vueg from 'vueg'
-import * as MarkdownItVue from 'markdown-it-vue'
-import 'markdown-it-vue/dist/markdown-it-vue.css'
 import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
-Vue.use(MarkdownItVue);
+
 Vue.use(vueg, router, {
     duration: 1,
     enter: 'fadeIn',
