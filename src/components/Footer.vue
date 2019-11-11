@@ -23,7 +23,7 @@
             <div class="nav">
                 <button v-on:click="$router.push('/')">首页</button>
                 <button>分类</button>
-                <button v-on:click="$router.push('/all')">文章</button>
+                <button v-on:click="$router.push('/article')">文章</button>
                 <button>项目</button>
                 <button>时间轴</button>
             </div>

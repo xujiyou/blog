@@ -9,11 +9,11 @@
                 </div>
             </div>
             <div class="nav">
-                <button v-on:click="push('/')" :style="path === '/' ? 'color: #17b5d2' : ''">首页</button>
-                <button v-on:click="push('/category')" :style="path === '/category' ? 'color: #17b5d2' : ''">分类</button>
-                <button v-on:click="push('/article')" :style="path === '/article' ? 'color: #17b5d2' : ''">文章</button>
-                <button v-on:click="push('/project')" :style="path === '/project' ? 'color: #17b5d2' : ''">项目</button>
-                <button v-on:click="push('/time')" :style="path === '/time' ? 'color: #17b5d2' : ''">时间轴</button>
+                <button v-on:click="push('/', 'home')" :style="pathName === 'home' ? 'color: #17b5d2' : ''">首页</button>
+                <button v-on:click="push('/category', 'category')" :style="pathName === 'category' ? 'color: #17b5d2' : ''">分类</button>
+                <button v-on:click="push('/article', 'article')" :style="pathName === 'article' ? 'color: #17b5d2' : ''">文章</button>
+                <button v-on:click="push('/project', 'project')" :style="pathName === 'project' ? 'color: #17b5d2' : ''">项目</button>
+                <button v-on:click="push('/time', 'time')" :style="pathName === 'time' ? 'color: #17b5d2' : ''">时间轴</button>
             </div>
             <div class="footer">
                 <button>关于</button>
@@ -33,7 +33,7 @@
             <div :class="{'mobile-nav': true, 'expand-menu': expand}">
                 <button v-on:click="$router.push('/')">首页</button>
                 <button>分类</button>
-                <button v-on:click="$router.push('/all')">文章</button>
+                <button v-on:click="$router.push('/article')">文章</button>
                 <button>项目</button>
                 <button>时间轴</button>
             </div>
@@ -51,22 +51,22 @@
         @State("pc")
         pc!: number;
 
-        @State("path")
-        path!: string;
+        @State("pathName")
+        pathName!: string;
 
         expand = false;
 
-        @Action("savePath")
-        savePath!:Function;
+        @Action("savePathName")
+        savePathName!: Function;
 
         mounted() {
-            this.savePath(this.$route.path);
+            this.savePathName(this.$route.name);
         }
 
-        push(value) {
-            if (this.path !== value) {
-                this.savePath(value);
-                this.$router.push(value);
+        push(path, name) {
+            if (this.pathName !== name) {
+                this.savePathName(name);
+                this.$router.push(path);
             }
         }
     }

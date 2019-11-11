@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-    import LeftList from "@/components/all/LeftList.vue";
-    import ArticleList from "@/components/all/ArticleList.vue";
+    import LeftList from "@/components/article/LeftList.vue";
+    import ArticleList from "@/components/article/ArticleList.vue";
     import { Component, Vue } from "vue-property-decorator";
     import { Action } from 'vuex-class';
 

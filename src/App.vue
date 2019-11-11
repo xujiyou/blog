@@ -149,7 +149,7 @@
             background-color: transparent;
         }
         100% {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.96);
         }
     }
 </style>

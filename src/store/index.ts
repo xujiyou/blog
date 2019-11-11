@@ -1,12 +1,14 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { StoreOptions } from "vuex";
+import { RootState } from './types';
+import {article_store} from "@/store/module/article/article_store";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store: StoreOptions<RootState> = {
     state: {
         pc: true,
-        path: "",
+        pathName: "",
         scrollTop: 0
     },
     actions: {
@@ -27,8 +29,8 @@ export default new Vuex.Store({
             commit('setScrollTop',top);
         },
 
-        savePath  ({ commit }, path) {
-            commit('setPath', path);
+        savePathName  ({ commit }, pathName) {
+            commit('setPathName', pathName);
         },
     },
     mutations: {
@@ -37,12 +39,16 @@ export default new Vuex.Store({
         },
 
         setScrollTop (state, top) {
-          state.scrollTop = top;
+            state.scrollTop = top;
         },
 
-        setPath (state, path) {
-            state.path = path;
+        setPathName (state, pathName) {
+            state.pathName = pathName;
         },
     },
-    modules: {}
-});
+    modules: {
+        article_store
+    }
+};
+
+export default new Vuex.Store<RootState>(store);
