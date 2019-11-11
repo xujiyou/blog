@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a64c796a063eb4158a762c6c7a534bf1.js"
+  "/precache-manifest.8d3ebcc4d3e69beb25d3e210b09076b8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "xujiyou-blog"});
