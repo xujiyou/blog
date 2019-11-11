@@ -33,6 +33,10 @@ export const actions: ActionTree<ArticleState, RootState> = {
         state.category = category;
         state.technology = technology;
         state.articleList  = await articleApi.findAllArticle(category, technology);
+    },
+
+    async viewArticleDetail({ commit }, param) {
+        return await articleApi.viewArticleDetail(param["category"], param["technology"], param["title"] + ".md");
     }
 };
 

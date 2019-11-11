@@ -13,4 +13,11 @@ export class ArticleApi {
             method: "GET",
         })
     }
+
+    async viewArticleDetail(category: string, technology: string, fileName: string) {
+        // http://118.126.82.184:8080/api/article/view/${category}/${technology}/${fileName}
+        return await d3.text(`http://118.126.82.184:8080/api/article/view/%E4%BA%91%E5%8E%9F%E7%94%9F/Docker/redis.md`, {
+            method: "GET",
+        })
+    }
 }

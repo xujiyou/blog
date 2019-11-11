@@ -16,7 +16,7 @@
                     </span>
                 </div>
 
-                <button>阅读全文</button>
+                <button v-on:click="push(article.category, article.technology, article.title)">阅读全文</button>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
     import { State, Action } from 'vuex-class';
-    import {ArticleState} from "@/store/module/article/types";
+    import { ArticleState } from "@/store/module/article/types";
     const namespace: string = 'article_store';
 
     @Component({})
@@ -37,6 +37,9 @@
         @Action("findArticleList", {namespace})
         findArticleList!: Function;
 
+        @Action("savePathName")
+        savePathName!: Function;
+
         async mounted() {
             let category = this.$route.params["category"];
             let technology = this.$route.params["technology"];
@@ -44,6 +47,11 @@
                 category: category,
                 technology: technology
             });
+        }
+
+        push (category, technology, filename) {
+            this.savePathName("signal");
+            this.$router.push(`/signal/${category}/${technology}/${filename}`);
         }
     }
 </script>
