@@ -12,10 +12,5 @@ module.exports = {
             maskIcon: 'xu.jpeg',
             msTileImage:'xu.jpeg'
         }
-    },
-    pluginOptions: {
-        foo: {
-            // 插件可以作为 `options.pluginOptions.foo` 访问这些选项。
-        }
     }
 };
