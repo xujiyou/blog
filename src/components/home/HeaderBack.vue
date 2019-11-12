@@ -13,7 +13,7 @@
                 <button @click="gotoThisProject">本项目代码</button>
                 <button @click="gotoGithub">Github</button>
                 <button @click="gotoZhihu">知乎</button>
-                <button @click="push('/article')">本站全部文章</button>
+                <button @click="push('/article', 'article')">本站全部文章</button>
             </div>
         </div>
         <div id="mobile-header-back" v-else>
@@ -29,7 +29,7 @@
                 <button @click="gotoThisProject">本项目代码</button>
                 <button @click="gotoGithub">Github</button>
                 <button @click="gotoZhihu">知乎</button>
-                <button @click="$router.push('/article')">本站全部文章</button>
+                <button @click="push('/article', 'article')">本站全部文章</button>
             </div>
         </div>
     </div>
@@ -45,8 +45,8 @@
         @State("pc")
         pc!: number;
 
-        @Action("savePath")
-        savePath!:Function;
+        @Action("savePathName")
+        savePathName!:Function;
 
         gotoThisProject () {
             window.open("https://github.com/xujiyou/blog")
@@ -60,8 +60,8 @@
             window.open("https://www.zhihu.com/people/yumugede/posts")
         }
 
-        push (value) {
-            this.savePath(value);
+        push (value, name) {
+            this.savePathName(name);
             this.$router.push(value);
         }
     }

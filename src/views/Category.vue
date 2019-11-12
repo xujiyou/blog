@@ -4,60 +4,60 @@
             <div class="content">
                 <div class="category">
                     <div class="title">云原生</div>
-                    <button>Docker</button>
-                    <button>Kubernetes</button>
-                    <button>Istio</button>
-                    <button>gRPC</button>
-                    <button>Prometheus</button>
-                    <button>Grafana</button>
-                    <button>Jaeger</button>
-                    <button>Helm</button>
+                    <button @click="push('/article/云原生/Docker', 'article')">Docker</button>
+                    <button @click="push('/article/云原生/Kubernetes', 'article')">Kubernetes</button>
+                    <button @click="push('/article/云原生/Istio', 'article')">Istio</button>
+                    <button @click="push('/article/云原生/gRPC', 'article')">gRPC</button>
+                    <button @click="push('/article/云原生/Prometheus', 'article')">Prometheus</button>
+                    <button @click="push('/article/云原生/Grafana', 'article')">Grafana</button>
+                    <button @click="push('/article/云原生/Jaeger', 'article')">Jaeger</button>
+                    <button @click="push('/article/云原生/Helm', 'article')">Helm</button>
                 </div>
                 <div class="category">
                     <div class="title">大数据</div>
-                    <button>HDFS</button>
-                    <button>HBase</button>
-                    <button>Hive</button>
-                    <button>Kafka</button>
-                    <button>Hue</button>
-                    <button>Impala</button>
-                    <button>Oozie</button>
-                    <button>Solr</button>
-                    <button>Spark</button>
-                    <button>YARN</button>
-                    <button>ZooKeeper</button>
+                    <button @click="push('/article/大数据/HDFS', 'article')">HDFS</button>
+                    <button @click="push('/article/大数据/HBase', 'article')">HBase</button>
+                    <button @click="push('/article/大数据/Hive', 'article')">Hive</button>
+                    <button @click="push('/article/大数据/Kafka', 'article')">Kafka</button>
+                    <button @click="push('/article/大数据/Hue', 'article')">Hue</button>
+                    <button @click="push('/article/大数据/Impala', 'article')">Impala</button>
+                    <button @click="push('/article/大数据/Oozie', 'article')">Oozie</button>
+                    <button @click="push('/article/大数据/Solr', 'article')">Solr</button>
+                    <button @click="push('/article/大数据/Spark', 'article')">Spark</button>
+                    <button @click="push('/article/大数据/YARN', 'article')">YARN</button>
+                    <button @click="push('/article/大数据/ZooKeeper', 'article')">ZooKeeper</button>
                 </div>
                 <div class="category">
                     <div class="title">前端</div>
-                    <button>Vue.js</button>
-                    <button>Node.js</button>
-                    <button>TypeScript</button>
-                    <button>D3.js</button>
-                    <button>HTML5&CSS3</button>
-                    <button>Nuxt.js</button>
-                    <button>Less&Sass</button>
-                    <button>WebAssembly</button>
-                    <button>Flutter</button>
-                    <button>Swift</button>
-                    <button>Kotlin</button>
+                    <button @click="push('/article/前端/Vue.js', 'article')">Vue.js</button>
+                    <button @click="push('/article/前端/Node.js', 'article')">Node.js</button>
+                    <button @click="push('/article/前端/TypeScript', 'article')">TypeScript</button>
+                    <button @click="push('/article/前端/D3.js', 'article')">D3.js</button>
+                    <button @click="push('/article/前端/HTML5&CSS3', 'article')">HTML5&CSS3</button>
+                    <button @click="push('/article/前端/Nuxt.js', 'article')">Nuxt.js</button>
+                    <button @click="push('/article/前端/Less&Sass', 'article')">Less&Sass</button>
+                    <button @click="push('/article/前端/WebAssembly', 'article')">WebAssembly</button>
+                    <button @click="push('/article/前端/Flutter', 'article')">Flutter</button>
+                    <button @click="push('/article/前端/Swift', 'article')">Swift</button>
+                    <button @click="push('/article/前端/Kotlin', 'article')">Kotlin</button>
                 </div>
                 <div class="category">
                     <div class="title">数据存储</div>
-                    <button>MySQL</button>
-                    <button>PostgreSQL</button>
-                    <button>Redis</button>
-                    <button>MongoDB</button>
-                    <button>Neo4j</button>
-                    <button>Elasticsearch</button>
-                    <button>Ceph</button>
+                    <button @click="push('/article/数据存储/MySQL', 'article')">MySQL</button>
+                    <button @click="push('/article/数据存储/PostgreSQL', 'article')">PostgreSQL</button>
+                    <button @click="push('/article/数据存储/Redis', 'article')">Redis</button>
+                    <button @click="push('/article/数据存储/MongoDB', 'article')">MongoDB</button>
+                    <button @click="push('/article/数据存储/Neo4j', 'article')">Neo4j</button>
+                    <button @click="push('/article/数据存储/Elasticsearch', 'article')">Elasticsearch</button>
+                    <button @click="push('/article/数据存储/Ceph', 'article')">Ceph</button>
                 </div>
                 <div class="category">
                     <div class="title">Java</div>
-                    <button>JVM</button>
-                    <button>Spring</button>
-                    <button>Netty</button>
-                    <button>Maven</button>
-                    <button>Gradle</button>
+                    <button @click="push('/article/Java/JVM', 'article')">JVM</button>
+                    <button @click="push('/article/Java/Spring', 'article')">Spring</button>
+                    <button @click="push('/article/Java/Netty', 'article')">Netty</button>
+                    <button @click="push('/article/Java/Maven', 'article')">Maven</button>
+                    <button @click="push('/article/Java/Gradle', 'article')">Gradle</button>
                 </div>
             </div>
         </div>
@@ -76,10 +76,18 @@
         @Action("saveScrollTop")
         saveScrollTop!: Function;
 
+        @Action("savePathName")
+        savePathName!:Function;
+
         scroll() {
             const page = document.querySelector("#page");
             if (page === null) return;
             this.saveScrollTop(page.scrollTop);
+        }
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
         }
     }
 </script>

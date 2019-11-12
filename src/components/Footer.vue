@@ -7,7 +7,7 @@
                 <div class="small">生命不息</div>
                 <div class="big">折腾不止</div>
             </div>
-            <button>本站全部文章</button>
+            <button @click="push('/article', 'article')">本站全部文章</button>
         </div>
 
         <div class="bottom" v-if="pc">
@@ -44,12 +44,20 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class Footer extends Vue {
         @State("pc")
         pc!: number;
+
+        @Action("savePathName")
+        savePathName!:Function;
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
+        }
     }
 </script>
 

@@ -7,7 +7,7 @@
                     依托于 Kubernetes ，整合了 DevOps , CI/DI , 微服务架构。<br/>
                     让项目轻松实现高可用，分布式。<br/>
                     还有高速、安全、可视化、故障隔离、容错、自动恢复、弹性扩展等好处。<br/><br/>
-                    <button>云原生系列文章</button>
+                    <button @click="push('/article/云原生', 'article')">云原生系列文章</button>
                 </div>
                 <div class="skill-list">
                     <div class="card">
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="mobile-button">
-                    <button>云原生系列文章</button>
+                    <button @click="push('/article/云原生', 'article')">云原生系列文章</button>
                 </div>
             </div>
         </div>
@@ -113,12 +113,21 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class CloudNative extends Vue {
+
         @State("pc")
         pc!: number;
+
+        @Action("savePathName")
+        savePathName!:Function;
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
+        }
     }
 </script>
 

@@ -1,12 +1,12 @@
 <template>
     <div>
         <div id="big-front" v-if="pc">
-            <div class="title"><b>大前端</b></div>
+            <div class="title"><b>前端</b></div>
             <div class="content">
                 <div class="desc">
                     包括但不限于 Web前端、iOS APP、安卓APP、桌面客户端、各种小程序。<br/>
                     也可以理解为所有 UI 层，游戏除外。<br/><br/><br/>
-                    <button>前端系列文章</button>
+                    <button @click="push('/article/前端', 'article')">前端系列文章</button>
                 </div>
                 <div class="skill-list">
                     <div style="font-size: 20px; padding-bottom: 10px"><b>Web 前端</b></div>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="mobile-big-front" v-else>
-            <div class="title"><b>大前端</b></div>
+            <div class="title"><b>前端</b></div>
             <div class="mobile-content">
                 <div class="mobile-desc">
                     包括但不限于 Web前端、iOS APP、安卓APP、桌面客户端、各种小程序。<br/>
@@ -50,7 +50,7 @@
                     <div><b>Kotlin</b> : 简化Java的语言，可以基于JVM，也可以基于LLVM。</div>
                 </div>
                 <div class="mobile-button">
-                    <button>前端系列文章</button>
+                    <button @click="push('/article/前端', 'article')">前端系列文章</button>
                 </div>
             </div>
         </div>
@@ -59,12 +59,21 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class BigFront extends Vue {
+
         @State("pc")
         pc!: number;
+
+        @Action("savePathName")
+        savePathName!:Function;
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
+        }
     }
 </script>
 

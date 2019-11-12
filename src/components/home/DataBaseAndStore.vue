@@ -8,7 +8,7 @@
                     存储格式包括关系型和非关系型，非关系型又分为文档、键值对、图、列等格式。<br/>
                     另外还有一些分布式储存技术和对象储存技术。<br/>
                     <br/><br/>
-                    <button>数据库及存储技术系列文章</button>
+                    <button @click="push('/article/数据存储', 'article')">数据库及存储技术系列文章</button>
                 </div>
                 <div class="skill-list">
                     <div><b>MySQL</b> : 比较传统的关系型数据库。</div>
@@ -44,7 +44,7 @@
                     <div><b>Ceph</b> : 分布式文件系统，对象储存，实时存储系统。</div>
                 </div>
                 <div class="mobile-button">
-                    <button>数据库及存储技术系列文章</button>
+                    <button @click="push('/article/数据存储', 'article')">数据库及存储技术系列文章</button>
                 </div>
             </div>
         </div>
@@ -53,12 +53,20 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class DataBaseAndStore extends Vue {
         @State("pc")
         pc!: number;
+
+        @Action("savePathName")
+        savePathName!:Function;
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
+        }
     }
 </script>
 

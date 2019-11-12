@@ -6,7 +6,7 @@
                 <div class="desc">
                     主要学习 CDH 中的各种组件。<br/>
                     通过 CM 安装 CDH 简单快捷，极大的降低了学习成本。<br/><br/><br/>
-                    <button>大数据系列文章</button>
+                    <button @click="push('/article/大数据', 'article')">大数据系列文章</button>
                 </div>
                 <div class="skill-list">
                     <div><b>HDFS</b> : 分布式文件系统。</div>
@@ -44,7 +44,7 @@
                     <div><b>ZooKeeper</b> : 配置维护、域名服务、分布式同步、组服务等。</div>
                 </div>
                 <div class="mobile-button">
-                    <button>大数据系列文章</button>
+                    <button @click="push('/article/大数据', 'article')">大数据系列文章</button>
                 </div>
             </div>
         </div>
@@ -53,12 +53,20 @@
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
-    import { State } from 'vuex-class';
+    import { State, Action } from 'vuex-class';
 
     @Component({})
     export default class BigData extends Vue {
         @State("pc")
         pc!: number;
+
+        @Action("savePathName")
+        savePathName!:Function;
+
+        push (value, name) {
+            this.savePathName(name);
+            this.$router.push(value);
+        }
     }
 </script>
 
